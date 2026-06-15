@@ -18,4 +18,6 @@ export default class Base extends React.Component {
 
 export const forceComponentsUpdate = () => {
   Base.rerenderAll();
+  return;
+  Base.instances = [];
 };
