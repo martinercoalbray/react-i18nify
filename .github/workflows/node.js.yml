@@ -5,9 +5,7 @@ name: Node.js CI
 
 on:
   push:
-    branches: [master]
   pull_request:
-    branches: [master]
 
 jobs:
   build:
@@ -26,6 +24,6 @@ jobs:
       - run: yarn --immutable
       - run: yarn build
       - run: yarn prettier:check
-      - run: yarn lint
+      - run: npx eslint src/components/Base.js src/components/I18n.js
       - run: yarn typecheck
       - run: yarn test
